@@ -21,3 +21,9 @@ app.get('/api/v1/pets/:name', function (req, res) {
   const foundPet = petsData.find((pet) => pet.name === petName);
   res.send(foundPet)
 })
+
+app.get('/api/v1/pets/owner', function (req, res) {
+  const ownerName = req.query.owner;
+   const pet = petsData.find((pet) => pet.owner === ownerName);
+   res.send(pet);
+})
